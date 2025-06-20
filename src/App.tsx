@@ -1,29 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./styles.css";
+import Greeting from "./Greeting";
 
 const App: React.FC = () => {
-  const [name, setName] = useState<string>("");
-  const [greeting, setGreeting] = useState<string>("שלום ——");
-
-  const handleClick = () => {
-    setGreeting(`שלום ${name || "——"}`);
-  };
-
   return (
-    <div className="container">
-      <h1 className="title">{greeting}</h1>
-      <div className="form">
-        <input
-          type="text"
-          placeholder="הכנס שם..."
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="input"
-        />
-        <button onClick={handleClick} className="button">
-          ברוך הבא
-        </button>
-      </div>
+    <div>
+      <Greeting />
+      <Greeting />
+      <Greeting />
     </div>
   );
 };
